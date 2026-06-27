@@ -74,14 +74,17 @@ export default function Navbar() {
       {session ? (
         <div>
           <button
-            id={buttonId}
-            aria-controls={open ? menuId : undefined}
-            aria-haspopup="true"
-            aria-expanded={open}
-            onClick={handleClick}
-          >
-            <Avatar alt={session?.user?.name} src={session?.user?.image} />
-          </button>
+              id={buttonId}
+              aria-controls={open ? menuId : undefined}
+              aria-haspopup="true"
+              aria-expanded={open}
+              onClick={handleClick}
+            >
+              <Avatar 
+                alt={session?.user?.name || "User Menu"} 
+                src={session?.user?.image || undefined} 
+              />
+            </button>
           <Menu
             id={menuId}
             anchorEl={anchorEl}
